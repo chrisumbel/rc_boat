@@ -4,12 +4,10 @@
 #include <plib/timers.h>
 
 int control_init() {
-    TRISC1 = 1; 
-    TRISC2 = 1; 
-    
+    TRISC2 = 1; // CCP1
+    TRISC1 = 1; // CCP2    
     return 0;
 }
-
 
 int read_ccp2(unsigned char config) {
     OpenCapture2(config & CAPTURE_INT_ON);    
