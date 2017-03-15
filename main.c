@@ -26,11 +26,6 @@ void main(void) {
     log_message_ln("Motors initialized");
     
     while (1) {
-        for(int i = 0; i < 100; i++) {
-            __delay_ms(10);
-        }
-
-        char message[16];
         log_message_ln("=======");        
 
         control_read_x(); // clean
@@ -51,7 +46,8 @@ void main(void) {
         if(y < 4400) {
             virt_dir = MOTOR_DIRECTION_FORWARD;
         }        
-        
+ 
+        char message[16] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
         log_message("x: ");        
         itoa(x, message);        
         log_message_ln(message);
