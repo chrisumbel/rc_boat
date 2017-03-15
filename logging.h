@@ -16,6 +16,16 @@ void log_init();
 void log_message_ln(char *s);
 void log_message(char *s);
 
+#ifdef __DEBUG
+#define LOG_INIT() log_init()
+#define LOG(s) log_message(s)
+#define LOG_LN(s) log_message_ln(s)
+#else
+#define LOG_INIT() 
+#define LOG(s) 
+#define LOG_LN(s) 
+#endif
+
 #ifdef	__cplusplus
 }
 #endif
