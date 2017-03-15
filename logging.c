@@ -6,7 +6,7 @@
 
 void log_init() {
     TRISC6 = 0;
-    OpenUSART(USART_TX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT & USART_BRGH_HIGH, 51);
+    OpenUSART(USART_TX_INT_ON & USART_ASYNCH_MODE & USART_EIGHT_BIT & USART_BRGH_HIGH, 51 /* 9600 @ 8mhz*/);
 }
 
 void log_message(char *s) {

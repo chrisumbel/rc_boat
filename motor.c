@@ -14,5 +14,9 @@ int motor_init() {
 
 int motor_set_direction(int direction) {
     LATB &= 0b11111000;
+#ifdef MOTORS_INVERSE
+    LATB |= ~direction;
+#else
     LATB |= direction;    
+#endif
 }
