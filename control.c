@@ -49,6 +49,7 @@ int control_read_x() {
     PIR1bits.CCP1IF = 0; 
     
     SetTmrCCPSrc(T1_SOURCE_CCP);
+    read_ccp1(CAP_EVERY_FALL_EDGE); // get starting point
     int s = read_ccp1(CAP_EVERY_RISE_EDGE);
     int e = read_ccp1(CAP_EVERY_FALL_EDGE);
     
@@ -59,6 +60,7 @@ int control_read_y() {
     PIR2bits.CCP2IF = 0; 
     
     SetTmrCCPSrc(T1_SOURCE_CCP);
+    read_ccp2(CAP_EVERY_FALL_EDGE); // get starting point
     int s = read_ccp2(CAP_EVERY_RISE_EDGE);
     int e = read_ccp2(CAP_EVERY_FALL_EDGE);
     

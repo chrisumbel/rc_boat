@@ -28,10 +28,7 @@ void main(void) {
     while (1) {
         log_message_ln("=======");        
 
-        control_read_x(); // clean
         int x = control_read_x();
-
-        control_read_y(); // clean        
         int y = control_read_y();
         
         int horiz_dir = 0;
